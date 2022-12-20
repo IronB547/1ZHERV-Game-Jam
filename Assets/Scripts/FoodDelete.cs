@@ -19,7 +19,6 @@ public class FoodDelete : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision Detected " + collision.gameObject +", "+ gameObject.tag);
 
         if(collision.gameObject.tag == "Food")
         {
