@@ -14,11 +14,11 @@ public class FieldOfView : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 
-    public bool canSeePlayer;
+    public bool canSeeFood;
 
     private void Start()
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        // playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
     }
 
@@ -42,19 +42,24 @@ public class FieldOfView : MonoBehaviour
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
-            {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+            canSeeFood = true;
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-                    canSeePlayer = true;
-                else
-                    canSeePlayer = false;
-            }
-            else
-                canSeePlayer = false;
+            GetComponent<Rigidbody>().AddForce(directionToTarget * 10);
+
+
+            // if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            // {
+            //     float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+            //     if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+            //         canSeePlayer = true;
+            //     else
+            //         canSeePlayer = false;
+            // }
+            // else
+            //     canSeePlayer = false;
         }
-        else if (canSeePlayer)
-            canSeePlayer = false;
+        else if (canSeeFood)
+            canSeeFood = false;
     }
 }
