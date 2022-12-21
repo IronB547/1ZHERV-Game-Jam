@@ -16,6 +16,8 @@ public class FieldOfView : MonoBehaviour
 
     public bool canSeeFood;
 
+    public Vector3 directionToTarget;
+
     private void Start()
     {
         // playerRef = GameObject.FindGameObjectWithTag("Player");
@@ -40,7 +42,8 @@ public class FieldOfView : MonoBehaviour
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
+            
+            directionToTarget = (target.position - transform.position).normalized;
 
             canSeeFood = true;
 

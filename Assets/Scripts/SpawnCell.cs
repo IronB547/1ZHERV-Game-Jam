@@ -8,6 +8,10 @@ public class SpawnCell : MonoBehaviour
     public GameObject cell;
     public GameObject food;
 
+    public GameObject bacterioPhage;
+
+    private float petriDishY = 42f;
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +30,7 @@ public class SpawnCell : MonoBehaviour
             if(Physics.Raycast(ray, out hit))
             {
                 Vector3 newPos = hit.point;
+                newPos.y = petriDishY;
                 cellInstance.transform.position = newPos;
             }  
 
@@ -49,13 +54,35 @@ public class SpawnCell : MonoBehaviour
             if(Physics.Raycast(ray, out hit))
             {
                 Vector3 newPos = hit.point;
-                newPos.y = 41.6f;
+                newPos.y = petriDishY;
                 foodInstance.transform.position = newPos;
             }  
 
             //spawn it 1 unit in front of camera
             //print to console
             Debug.Log("Food Spawned");
+        }else if( Input.GetButtonDown("Fire3") ){
+            //create a new cell from Cell prefab
+            GameObject bacterioPhageInstance = Instantiate(bacterioPhage);
+
+            //set position of cell to mouse position
+            // foodInstance.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            //add tag Cell
+            bacterioPhageInstance.tag = "BacterioPhage";
+
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit))
+            {
+                Vector3 newPos = hit.point;
+                newPos.y = petriDishY;
+                bacterioPhageInstance.transform.position = newPos;
+            }  
+
+            //spawn it 1 unit in front of camera
+            //print to console
+            Debug.Log("BacterioPhage Spawned");
         }
     }
 }
