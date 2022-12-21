@@ -17,6 +17,17 @@ public class FoodConsume : MonoBehaviour
         return new Vector3(newScale, newScale, newScale);
     }
 
+    void spawnCells(int numCells){
+        for(int i = 0; i < numCells; i++){
+            Vector3 initialScale = getNewScale(1);
+
+            GameObject cellInstance = Instantiate(cell);
+            cellInstance.transform.position = transform.position;
+            cellInstance.transform.localScale = initialScale;
+            cellInstance.GetComponent<FieldOfView>().enabled = true;
+        }
+    }
+
     void OnCollisionEnter(Collision collision)
     {
 
@@ -41,17 +52,7 @@ public class FoodConsume : MonoBehaviour
 
                 foodEaten = 0;
 
-                Vector3 initialScale = getNewScale(1);
-
-                GameObject cellInstance = Instantiate(cell);
-                cellInstance.transform.position = transform.position;
-                cellInstance.transform.localScale = initialScale;
-                cellInstance.GetComponent<FieldOfView>().enabled = true;
-
-                GameObject cellInstance2 = Instantiate(cell);
-                cellInstance2.transform.position = transform.position;
-                cellInstance2.transform.localScale = initialScale;
-                cellInstance2.GetComponent<FieldOfView>().enabled = true;
+                spawnCells(3);
             }
         }
     }

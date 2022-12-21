@@ -11,7 +11,9 @@ public class FieldOfView : MonoBehaviour
 
     public GameObject playerRef;
 
-    public LayerMask targetMask;
+    public LayerMask foodMask;
+    public LayerMask phageMask;
+
     public LayerMask obstructionMask;
 
     public bool canSeeFood;
@@ -20,7 +22,6 @@ public class FieldOfView : MonoBehaviour
 
     private void Start()
     {
-        // playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
     }
 
@@ -37,11 +38,23 @@ public class FieldOfView : MonoBehaviour
 
     private void FieldOfViewCheck()
     {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+        Collider[] phageChecks = Physics.OverlapSphere(transform.position, radius * 0.3f, phageMask);
+        if(phageChecks.Length != 0){
+            Transform target = phageChecks[0].transform;
+            
+            //escape from the phage
+            directionToTarget = (transform.position - target.position).normalized;
 
-        if (rangeChecks.Length != 0)
+            GetComponent<Rigidbody>().AddForce(directionToTarget * 10);
+
+            return;
+        }
+
+        Collider[] foodChecks = Physics.OverlapSphere(transform.position, radius, foodMask);
+
+        if (foodChecks.Length != 0)
         {
-            Transform target = rangeChecks[0].transform;
+            Transform target = foodChecks[0].transform;
             
             directionToTarget = (target.position - transform.position).normalized;
 
@@ -49,18 +62,6 @@ public class FieldOfView : MonoBehaviour
 
             GetComponent<Rigidbody>().AddForce(directionToTarget * 10);
 
-
-            // if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
-            // {
-            //     float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-            //     if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-            //         canSeePlayer = true;
-            //     else
-            //         canSeePlayer = false;
-            // }
-            // else
-            //     canSeePlayer = false;
         }
         else if (canSeeFood)
             canSeeFood = false;

@@ -20,11 +20,6 @@ public class SpawnCell : MonoBehaviour
             //create a new cell from Cell prefab
             GameObject cellInstance = Instantiate(cell);
 
-            //set position of cell to mouse position
-            // cellInstance.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            //add tag Cell
-
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit))
@@ -34,19 +29,12 @@ public class SpawnCell : MonoBehaviour
                 cellInstance.transform.position = newPos;
             }  
 
-            //spawn it 1 unit in front of camera
-            // cellInstance.transform.position += new Vector3(0,0,1);
-            // cellInstance.AddComponent<SphereCollider>();
-            //print to console
-            Debug.Log("Cell Spawned");
         }else if( Input.GetButtonDown("Fire2") ){
-            //create a new cell from Cell prefab
+            //create a new food from Food prefab
             GameObject foodInstance = Instantiate(food);
 
-            //set position of cell to mouse position
-            // foodInstance.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            //add tag Cell
+            //add tag Food
             foodInstance.tag = "Food";
 
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
@@ -57,18 +45,12 @@ public class SpawnCell : MonoBehaviour
                 newPos.y = petriDishY;
                 foodInstance.transform.position = newPos;
             }  
-
-            //spawn it 1 unit in front of camera
-            //print to console
             Debug.Log("Food Spawned");
         }else if( Input.GetButtonDown("Fire3") ){
-            //create a new cell from Cell prefab
+            //create a new phage from prefab
             GameObject bacterioPhageInstance = Instantiate(bacterioPhage);
 
-            //set position of cell to mouse position
-            // foodInstance.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            //add tag Cell
+            //add tag BacterioPhage
             bacterioPhageInstance.tag = "BacterioPhage";
 
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
@@ -79,10 +61,6 @@ public class SpawnCell : MonoBehaviour
                 newPos.y = petriDishY;
                 bacterioPhageInstance.transform.position = newPos;
             }  
-
-            //spawn it 1 unit in front of camera
-            //print to console
-            Debug.Log("BacterioPhage Spawned");
         }
     }
 }

@@ -158,10 +158,14 @@ MonoBehaviour:
   radius: 10
   angle: 360
   playerRef: {fileID: 0}
-  targetMask:
+  foodMask:
     serializedVersion: 2
     m_Bits: 64
+  phageMask:
+    serializedVersion: 2
+    m_Bits: 128
   obstructionMask:
     serializedVersion: 2
     m_Bits: 0
   canSeeFood: 0
+  directionToTarget: {x: 0, y: 0, z: 0}

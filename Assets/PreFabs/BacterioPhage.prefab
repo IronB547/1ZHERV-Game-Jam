@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 837560935579471781}
   - component: {fileID: -6001408086931893649}
   - component: {fileID: 4165755651355106694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BacterioPhage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a3f92de8d14cd4b99ec35954231010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifetime: 60
