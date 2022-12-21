@@ -38,7 +38,7 @@ public class FieldOfView : MonoBehaviour
 
     private void FieldOfViewCheck()
     {
-        Collider[] phageChecks = Physics.OverlapSphere(transform.position, radius * 0.3f, phageMask);
+        Collider[] phageChecks = Physics.OverlapSphere(transform.position, radius * 0.4f, phageMask);
         if(phageChecks.Length != 0){
             Transform target = phageChecks[0].transform;
             

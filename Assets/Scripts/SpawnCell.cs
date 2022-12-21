@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class SpawnCell : MonoBehaviour
 {
+    public AnimationCurve curve;
     public GameObject cell;
     public GameObject food;
 
@@ -12,55 +12,77 @@ public class SpawnCell : MonoBehaviour
 
     private float petriDishY = 42f;
 
+    Vector3 getRandomPosInPetriDish(){
+        //new vector which will be centered in the petri dish
+        Vector3 newPos = new Vector3(0.8f, petriDishY, -10.4f);
+
+        //get a random angle between 0 and 360
+        float angle = Random.Range(0, 360);
+
+        //get a random radius between 0 and 24
+        float radius = Random.Range(0, 24);
+
+        //convert the angle to radians
+        float angleInRadians = angle * Mathf.Deg2Rad;
+
+        //calculate the x and z coordinates
+        float x = radius * Mathf.Cos(angleInRadians);
+        float z = radius * Mathf.Sin(angleInRadians);
+
+        //set the new position
+        newPos.x += x;
+        newPos.z += z;
+
+        return newPos;
+    }
+
+    Vector3 getMousePosInPetriDish(){
+        
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
+        RaycastHit hit;
+        Vector3 newPos;
+
+        if(Physics.Raycast(ray, out hit))
+        {
+            if(hit.collider.name == "Petri_dish"){
+                newPos = hit.point;
+                newPos.y = petriDishY;
+                return newPos;
+            }
+        }
+
+        return getRandomPosInPetriDish();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if( Input.GetButtonDown("Fire1") ){
 
-            //create a new cell from Cell prefab
             GameObject cellInstance = Instantiate(cell);
 
-            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
-            {
-                Vector3 newPos = hit.point;
-                newPos.y = petriDishY;
-                cellInstance.transform.position = newPos;
-            }  
+            cellInstance.transform.position = getMousePosInPetriDish();
 
         }else if( Input.GetButtonDown("Fire2") ){
-            //create a new food from Food prefab
             GameObject foodInstance = Instantiate(food);
-
-
-            //add tag Food
             foodInstance.tag = "Food";
 
-            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
-            {
-                Vector3 newPos = hit.point;
-                newPos.y = petriDishY;
-                foodInstance.transform.position = newPos;
-            }  
-            Debug.Log("Food Spawned");
+            foodInstance.transform.position = getMousePosInPetriDish();
         }else if( Input.GetButtonDown("Fire3") ){
-            //create a new phage from prefab
+            
             GameObject bacterioPhageInstance = Instantiate(bacterioPhage);
 
-            //add tag BacterioPhage
             bacterioPhageInstance.tag = "BacterioPhage";
 
-            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
-            {
-                Vector3 newPos = hit.point;
-                newPos.y = petriDishY;
-                bacterioPhageInstance.transform.position = newPos;
-            }  
+            bacterioPhageInstance.transform.position = getMousePosInPetriDish();
+        }
+        //else if g key is pressed, spawn a new bacteriophage
+        else if( Input.GetKeyDown(KeyCode.F) ){
+            for(int i = 0; i < 40; i++){
+                GameObject bacterioPhageInstance = Instantiate(food);
+                bacterioPhageInstance.tag = "Food";
+                bacterioPhageInstance.transform.position = getRandomPosInPetriDish();
+            }
         }
     }
 }
