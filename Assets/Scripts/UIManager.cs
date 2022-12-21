@@ -77,6 +77,11 @@ public class UIManager : MonoBehaviour
             PlaySuperFast();
         }
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ShowMenu();
+        }
+
     }
 
     void CheckStartButton()
@@ -159,20 +164,6 @@ public class UIManager : MonoBehaviour
             SpawnMenu.SetActive(true);
             showMenu = true;
         }
-
-    }
-
-    public void SpawnFood()
-    {
-
-    }
-
-    public void SpawnCell()
-    {
-
-    }
-    public void SpawnPhage()
-    {
 
     }
 }

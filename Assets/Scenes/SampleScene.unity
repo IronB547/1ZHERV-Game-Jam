@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1546,7 +1546,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 295701051}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_TargetAssemblyTypeName: SpawnCell, Assembly-CSharp
+        m_MethodName: spawnCellRandomly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &295701051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,7 +1655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2655,7 +2667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3187,10 +3199,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 7255751}
   m_HandleRect: {fileID: 60075406}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 50
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3300,6 +3312,7 @@ MonoBehaviour:
   cell: {fileID: 71833100395882881, guid: 6f32015259b97a94cae08cf5735fa239, type: 3}
   food: {fileID: 8867308635143353987, guid: 9b0def3bc3b25494ba5099fc271116fe, type: 3}
   bacterioPhage: {fileID: 2232768577284366752, guid: 4bd30ce1cfda72d48994145bfde695d2, type: 3}
+  UI: {fileID: 1010376724}
 --- !u!1 &973541785
 GameObject:
   m_ObjectHideFlags: 0
@@ -3623,10 +3636,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 165328321}
   m_HandleRect: {fileID: 729512146}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 50
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3683,6 +3696,8 @@ MonoBehaviour:
   FoodSlider: {fileID: 1006065919}
   CellSlider: {fileID: 1361506742}
   PhageSlider: {fileID: 846827991}
+  speed: 1
+  paused: 0
 --- !u!1 &1023985866
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,10 +4763,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2106977964}
   m_HandleRect: {fileID: 1742708471}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 50
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5059,7 +5074,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1441873461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_TargetAssemblyTypeName: SpawnCell, Assembly-CSharp
+        m_MethodName: spawnPhageRandomly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1441873461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5156,7 +5183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6022,7 +6049,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1864928826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_TargetAssemblyTypeName: SpawnCell, Assembly-CSharp
+        m_MethodName: spawnFoodRandomly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1864928826
 MonoBehaviour:
   m_ObjectHideFlags: 0
