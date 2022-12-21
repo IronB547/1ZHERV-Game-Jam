@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 3394427}
   - component: {fileID: 3394426}
   m_Layer: 5
-  m_Name: FoodText (3)
+  m_Name: Phages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -559,8 +559,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -421.15778, y: 198.16293}
-  m_SizeDelta: {x: -842.3156, y: -396.3257}
+  m_AnchoredPosition: {x: -414.75, y: 198.16}
+  m_SizeDelta: {x: -829.5056, y: -396.3257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99428683
 MonoBehaviour:
@@ -640,7 +640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 422, y: -64.51781}
+  m_AnchoredPosition: {x: 425.59998, y: -66.81677}
   m_SizeDelta: {x: -863.36, y: -258.7271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103877897
@@ -1757,7 +1757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 422, y: -224.20123}
+  m_AnchoredPosition: {x: 425.6, y: -226.5}
   m_SizeDelta: {x: 210.6454, y: 55.0935}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393140168
@@ -2221,7 +2221,7 @@ GameObject:
   - component: {fileID: 546673011}
   - component: {fileID: 546673010}
   m_Layer: 5
-  m_Name: FoodText (1)
+  m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4191,8 +4191,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47.068985, y: 207.89093}
-  m_SizeDelta: {x: 94.13782, y: -129.29141}
+  m_AnchoredPosition: {x: -43.4508, y: 207.89093}
+  m_SizeDelta: {x: 86.9014, y: -129.2914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1205131740
 MonoBehaviour:
@@ -4936,7 +4936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 379.8451, y: 240.3223}
+  m_AnchoredPosition: {x: 371.5, y: 237.6}
   m_SizeDelta: {x: 410.0951, y: -353.2262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428956392
@@ -5282,7 +5282,7 @@ GameObject:
   - component: {fileID: 1573070662}
   - component: {fileID: 1573070661}
   m_Layer: 5
-  m_Name: FoodText (2)
+  m_Name: Cells
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5362,7 +5362,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
