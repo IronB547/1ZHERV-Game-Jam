@@ -21,6 +21,10 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI CellNumber;
     public TextMeshProUGUI PhageNumber;
 
+    public TextMeshProUGUI FoodStatsNumber;
+    public TextMeshProUGUI CellStatsNumber;
+    public TextMeshProUGUI PhageStatsNumber;
+
     public Slider FoodSlider;
     public Slider CellSlider;
     public Slider PhageSlider;
@@ -87,6 +91,11 @@ public class UIManager : MonoBehaviour
         {
             ShowHelpTab();
         }
+
+        FoodStatsNumber.text = GameObject.FindGameObjectsWithTag("Food").Length.ToString();
+        CellStatsNumber.text = GameObject.FindGameObjectsWithTag("Cell").Length.ToString();
+        PhageStatsNumber.text = GameObject.FindGameObjectsWithTag("BacterioPhage").Length.ToString();
+
     }
 
     void CheckStartButton()
