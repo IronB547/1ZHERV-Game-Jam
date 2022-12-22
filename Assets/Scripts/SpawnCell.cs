@@ -14,6 +14,8 @@ public class SpawnCell : MonoBehaviour
 
     private float petriDishY = 42f;
 
+    public LayerMask spawnAreaMask;
+
     Vector3 getRandomPosInPetriDish(){
         //new vector which will be centered in the petri dish
         Vector3 newPos = new Vector3(0.8f, petriDishY, -10.4f);
@@ -38,15 +40,40 @@ public class SpawnCell : MonoBehaviour
         return newPos;
     }
 
+    Vector3 getInitialVelocity(){
+            //initial speed
+            float speed = 0.1f;
+
+            //initial direction
+            Vector3 direction = new Vector3(0, 0, 0);
+
+            //get a random angle between 0 and 360
+            float angle = Random.Range(0, 360);
+
+            //convert the angle to radians
+            float angleInRadians = angle * Mathf.Deg2Rad;
+
+            //calculate the x and z coordinates
+            float x = speed * Mathf.Cos(angleInRadians);
+            float z = speed * Mathf.Sin(angleInRadians);
+
+            //set the new position
+            direction.x += x;
+            direction.z += z;
+
+            return direction;
+    }
+
     Vector3? getMousePosInPetriDish(){
         
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f));
         RaycastHit hit;
         Vector3 newPos;
 
-        if(Physics.Raycast(ray, out hit))
+        //perform the raycast with the spawnAreaMask
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, spawnAreaMask))
         {
-            if(hit.collider.name == "Petri_dish"){
+            if(hit.collider.name == "Petri_dish" || hit.collider.name == "Addon"){
                 newPos = hit.point;
                 newPos.y = petriDishY;
                 return newPos;
@@ -56,15 +83,32 @@ public class SpawnCell : MonoBehaviour
         return null;
     }
 
+    void spawnCell(Vector3 initialPos){
+        GameObject cellInstance = Instantiate(cell);
+        cellInstance.transform.position = initialPos;
+        cellInstance.GetComponent<Rigidbody>().velocity = getInitialVelocity();
+    }
+
+    void spawnFood(Vector3 initialPos){
+        GameObject foodInstance = Instantiate(food);
+        foodInstance.tag = "Food";
+        foodInstance.transform.position = initialPos;
+    }
+
+    void spawnPhage(Vector3 initialPos){
+        GameObject bacterioPhageInstance = Instantiate(bacterioPhage);
+        bacterioPhageInstance.transform.position = initialPos;
+        bacterioPhageInstance.GetComponent<Rigidbody>().velocity = getInitialVelocity();
+        bacterioPhageInstance.tag = "BacterioPhage";
+    }
+
     public void spawnCellRandomly(){
 
         int cellAmount = int.Parse(UI.GetComponent<UIManager>().CellNumber.text);
         
         for (int i = 0; i < cellAmount; i++)
         {
-            GameObject cellInstance = Instantiate(cell);
-            cellInstance.tag = "Cell";
-            cellInstance.transform.position = getRandomPosInPetriDish();
+            spawnCell(getRandomPosInPetriDish());
         }
     }
 
@@ -74,9 +118,7 @@ public class SpawnCell : MonoBehaviour
         
         for (int i = 0; i < foodAmount; i++)
         {
-            GameObject foodInstance = Instantiate(food);
-            foodInstance.tag = "Food";
-            foodInstance.transform.position = getRandomPosInPetriDish();
+            spawnFood(getRandomPosInPetriDish());
         }
     }
 
@@ -86,9 +128,7 @@ public class SpawnCell : MonoBehaviour
         
         for (int i = 0; i < phageAmount; i++)
         {
-            GameObject phageInstance = Instantiate(bacterioPhage);
-            phageInstance.tag = "BacterioPhage";
-            phageInstance.transform.position = getRandomPosInPetriDish();
+            spawnPhage(getRandomPosInPetriDish());
         }
     }
 
@@ -100,29 +140,19 @@ public class SpawnCell : MonoBehaviour
             if(initialPos == null)
                 return;
 
-            GameObject cellInstance = Instantiate(cell);
-
-            cellInstance.transform.position = (Vector3) initialPos;
-
+            spawnCell((Vector3) initialPos);
         }else if( Input.GetButtonDown("Fire2") ){
             Vector3? initialPos = getMousePosInPetriDish();
             if(initialPos == null)
                 return;
 
-            GameObject foodInstance = Instantiate(food);
-            foodInstance.tag = "Food";
-
-            foodInstance.transform.position = (Vector3) initialPos;
+            spawnFood((Vector3) initialPos);
         }else if( Input.GetButtonDown("Fire3") ){
             Vector3? initialPos = getMousePosInPetriDish();
             if(initialPos == null)
                 return;
             
-            GameObject bacterioPhageInstance = Instantiate(bacterioPhage);
-
-            bacterioPhageInstance.tag = "BacterioPhage";
-
-            bacterioPhageInstance.transform.position = (Vector3) initialPos;
+            spawnPhage((Vector3) initialPos);
         }
         else if( Input.GetKeyDown(KeyCode.C) ){
             spawnCellRandomly();
@@ -130,7 +160,7 @@ public class SpawnCell : MonoBehaviour
         else if( Input.GetKeyDown(KeyCode.F) ){
             spawnFoodRandomly();
         }
-        else if( Input.GetKeyDown(KeyCode.P) ){
+        else if( Input.GetKeyDown(KeyCode.X) ){
             spawnPhageRandomly();
         }
     }

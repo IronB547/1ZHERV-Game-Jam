@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6642899522582542854}
   - component: {fileID: -1806200543850219670}
   - component: {fileID: -5346234865289479208}
+  - component: {fileID: -9025808454500691496}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Cell
@@ -169,3 +170,15 @@ MonoBehaviour:
     m_Bits: 0
   canSeeFood: 0
   directionToTarget: {x: 0, y: 0, z: 0}
+--- !u!114 &-9025808454500691496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71833100395882881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612050b01008f8f448b1b39a94730f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
