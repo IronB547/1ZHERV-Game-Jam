@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     public GameObject StartButton;
     public TextMeshProUGUI SpeedNumber;
     public GameObject SpawnMenu;
+    public GameObject UI;
+    public GameObject HelpTab;
 
     public TextMeshProUGUI FoodNumber;
     public TextMeshProUGUI CellNumber;
@@ -24,9 +26,11 @@ public class UIManager : MonoBehaviour
     public Slider PhageSlider;
 
     private bool showMenu = false;
+    private bool showHelp = false;
     private bool startGame = false;
-    public float speed = 1.0f;
-    public bool paused = false;
+    private float speed = 1.0f;
+    private bool paused = false;
+    private bool hideUI = false;
 
     void Start()
     {
@@ -37,21 +41,13 @@ public class UIManager : MonoBehaviour
         startGame = false;
         paused = true;
         SpawnMenu.SetActive(false);
+        HelpTab.SetActive(false);
 
-        FoodSlider.onValueChanged.AddListener((value) =>
-        {
-            FoodNumber.text = value.ToString("0");
-        });
+        FoodSlider.onValueChanged.AddListener((value) => { FoodNumber.text = value.ToString("0"); });
 
-        CellSlider.onValueChanged.AddListener((value) =>
-        {
-            CellNumber.text = value.ToString("0");
-        });
+        CellSlider.onValueChanged.AddListener((value) => { CellNumber.text = value.ToString("0"); });
 
-        PhageSlider.onValueChanged.AddListener((value) =>
-        {
-            PhageNumber.text = value.ToString("0");
-        });
+        PhageSlider.onValueChanged.AddListener((value) => { PhageNumber.text = value.ToString("0"); });
     }
 
 
@@ -82,6 +78,15 @@ public class UIManager : MonoBehaviour
             ShowMenu();
         }
 
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            HideUI();
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ShowHelpTab();
+        }
     }
 
     void CheckStartButton()
@@ -95,6 +100,12 @@ public class UIManager : MonoBehaviour
 
     public void Paused()
     {
+        if (!startGame)
+        {
+            startGame = true;
+            StartButton.SetActive(false);
+        }
+
         if (paused)
         {
             Time.timeScale = speed;
@@ -163,6 +174,35 @@ public class UIManager : MonoBehaviour
         {
             SpawnMenu.SetActive(true);
             showMenu = true;
+        }
+
+    }
+
+    public void HideUI()
+    {
+        if (!hideUI)
+        {
+            hideUI = true;
+            UI.SetActive(false);
+        }
+        else
+        {
+            hideUI = false;
+            UI.SetActive(true);
+        }
+    }
+
+    public void ShowHelpTab()
+    {
+        if (showHelp)
+        {
+            HelpTab.SetActive(false);
+            showHelp = false;
+        }
+        else
+        {
+            HelpTab.SetActive(true);
+            showHelp = true;
         }
 
     }

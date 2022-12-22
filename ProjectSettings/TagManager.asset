@@ -7,6 +7,11 @@ TagManager:
   - Cell
   - Food
   - BacterioPhage
+  - YellowAddon
+  - GreenAddon
+  - TealAddon
+  - BlueAddon
+  - PurpleAddon
   layers:
   - Default
   - TransparentFX
