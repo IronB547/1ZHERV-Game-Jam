@@ -79,6 +79,9 @@ public class BacterioPhageBehavior : MonoBehaviour
             //duplicate the object 
             GameObject cellInstance = Instantiate(gameObject);
             cellInstance.transform.position = transform.position;
+
+            if(GetComponent<EntityAddon>().addon != null)
+                cellInstance.GetComponent<EntityAddon>().addon = GetComponent<EntityAddon>().addon;
         }
     }
 }
