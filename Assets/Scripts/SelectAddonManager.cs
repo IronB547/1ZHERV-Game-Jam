@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 
 /**
@@ -17,6 +19,13 @@ public class SelectAddonManager : MonoBehaviour
     public GameObject GreenAddonDescritpion;
     public GameObject YellowAddonDescritpion;
     public GameObject TealAddonDescritpion;
+
+    public GameObject AddonTimer;
+    public TextMeshProUGUI AddonColorText;
+    public TextMeshProUGUI AddonTimeLeft;
+    private static bool startTimer;
+    private static float totalTime = 20.0f;
+    private static float elapsedTime;
 
     public GameObject Addon;
 
@@ -41,6 +50,8 @@ public class SelectAddonManager : MonoBehaviour
      GreenAddonDescritpion.SetActive(false);
      YellowAddonDescritpion.SetActive(false);
      TealAddonDescritpion.SetActive(false);
+
+     AddonTimer.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,6 +61,20 @@ public class SelectAddonManager : MonoBehaviour
         {
 
         }
+
+        if (startTimer)
+        {
+            elapsedTime += Time.deltaTime/5;
+            AddonTimeLeft.text = (totalTime - (int)elapsedTime).ToString();
+
+            if (elapsedTime >= totalTime)
+            {
+                elapsedTime = 0.0f;
+                AddonTimer.SetActive(false);
+                startTimer = false;
+            }
+        }
+
     }
 
     private Color hoverColor;
@@ -163,10 +188,13 @@ public class SelectAddonManager : MonoBehaviour
     void OnMouseDown()
     {
         RemoveAddons(true);
+        elapsedTime = 0.0f;
 
-        if(gameObject.tag == "TealAddon")
+        if (gameObject.tag == "TealAddon")
         {
-            
+            AddonTimer.SetActive(true);
+            AddonColorText.text = "Teal";
+            startTimer = true;
 
             GameObject addon = SpawnAddon();
 
@@ -177,7 +205,9 @@ public class SelectAddonManager : MonoBehaviour
 
         if (gameObject.tag == "YellowAddon")
         {
-            
+            AddonTimer.SetActive(true);
+            AddonColorText.text = "Yellow";
+            startTimer = true;
 
             GameObject addon = SpawnAddon();
             //set the color of the addon liquid
@@ -188,7 +218,9 @@ public class SelectAddonManager : MonoBehaviour
 
         if (gameObject.tag == "GreenAddon")
         {
-            
+            AddonTimer.SetActive(true);
+            AddonColorText.text = "Green";
+            startTimer = true;
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = GreenAddonLiquid.color;
@@ -197,7 +229,9 @@ public class SelectAddonManager : MonoBehaviour
 
         if (gameObject.tag == "BlueAddon")
         {
-            
+            AddonTimer.SetActive(true);
+            AddonColorText.text = "Blue";
+            startTimer = true;
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = BlueAddonLiquid.color;
@@ -206,7 +240,9 @@ public class SelectAddonManager : MonoBehaviour
 
         if (gameObject.tag == "PurpleAddon")
         {
-            
+            AddonTimer.SetActive(true);
+            AddonColorText.text = "Purple";
+            startTimer = true;
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = PurpleAddonLiquid.color;
