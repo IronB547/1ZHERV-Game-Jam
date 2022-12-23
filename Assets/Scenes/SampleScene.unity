@@ -471,8 +471,8 @@ MonoBehaviour:
   m_text: "How to play: Feed the cells to multiply them, watch them as they are mercilessly
     being eaten by phages. You can either modify cells or phages (or just cause complete
     mayhem with purple) with the test tubes on the left. You can use the keybinds
-    for faster spawning/modifying.\n\nCreated by Juraj Dedi\u010D and Tom\xE1\u0161
-    Dvo\u0159\xE1k"
+    for faster spawning/modifying.\nNote: Modifiers do NOT stack.\n\nCreated by Juraj
+    Dedi\u010D and Tom\xE1\u0161 Dvo\u0159\xE1k"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
