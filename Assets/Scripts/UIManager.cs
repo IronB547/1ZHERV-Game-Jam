@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public GameObject SpawnMenu;
     public GameObject UI;
     public GameObject HelpTab;
+    public GameObject AboutTab;
 
     public TextMeshProUGUI FoodNumber;
     public TextMeshProUGUI CellNumber;
@@ -35,6 +36,7 @@ public class UIManager : MonoBehaviour
     private float speed = 1.0f;
     private bool paused = false;
     private bool hideUI = false;
+    private bool showAbout = false;
 
     void Start()
     {
@@ -44,8 +46,10 @@ public class UIManager : MonoBehaviour
         showMenu = false;
         startGame = false;
         paused = true;
+        showAbout = false;
         SpawnMenu.SetActive(false);
         HelpTab.SetActive(false);
+        AboutTab.SetActive(false);
 
         FoodSlider.onValueChanged.AddListener((value) => { FoodNumber.text = value.ToString("0"); });
 
@@ -214,5 +218,19 @@ public class UIManager : MonoBehaviour
             showHelp = true;
         }
 
+    }
+
+    public void ShowAboutTab()
+    {
+        if (showAbout)
+        {
+            AboutTab.SetActive(false);
+            showAbout = false;
+        }
+        else
+        {
+            AboutTab.SetActive(true);
+            showAbout = true;
+        }
     }
 }

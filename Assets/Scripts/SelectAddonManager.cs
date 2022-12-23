@@ -75,6 +75,32 @@ public class SelectAddonManager : MonoBehaviour
             }
         }
 
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            PurpleAddon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            BlueAddon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            GreenAddon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            YellowAddon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            TealAddon();
+        }
+
     }
 
     private Color hoverColor;
@@ -88,7 +114,7 @@ public class SelectAddonManager : MonoBehaviour
         displayPos = Input.mousePosition;
         if (gameObject.tag == "PurpleAddon")
         {
-            displayPos.x += 120;
+            displayPos.x += 75;
             displayPos.y += 20;
             PurpleAddonDescritpion.SetActive(true);
             PurpleAddonDescritpion.transform.position = displayPos;
@@ -187,66 +213,96 @@ public class SelectAddonManager : MonoBehaviour
 
     void OnMouseDown()
     {
-        RemoveAddons(true);
-        elapsedTime = 0.0f;
-
         if (gameObject.tag == "TealAddon")
         {
-            AddonTimer.SetActive(true);
-            AddonColorText.text = "Teal";
-            startTimer = true;
-
-            GameObject addon = SpawnAddon();
-
-            //set the color of the addon liquid
-            addon.GetComponent<Renderer>().material.color = TealAddonLiquid.color;
-            addon.GetComponent<AddonBehavior>().addon = new TealAddon();
+            TealAddon();
         }
 
         if (gameObject.tag == "YellowAddon")
         {
-            AddonTimer.SetActive(true);
-            AddonColorText.text = "Yellow";
-            startTimer = true;
-
-            GameObject addon = SpawnAddon();
-            //set the color of the addon liquid
-            // addon.GetComponent<Renderer>().material.color = YellowAddonLiquid.color;
-            addon.GetComponent<Renderer>().material.color = YellowAddonLiquid.color;
-            addon.GetComponent<AddonBehavior>().addon = new YellowAddon();
+            YellowAddon();
         }
 
         if (gameObject.tag == "GreenAddon")
         {
-            AddonTimer.SetActive(true);
-            AddonColorText.text = "Green";
-            startTimer = true;
-
-            GameObject addon = SpawnAddon();
-            addon.GetComponent<Renderer>().material.color = GreenAddonLiquid.color;
-            addon.GetComponent<AddonBehavior>().addon = new GreenAddon();
+            GreenAddon();
         }
 
         if (gameObject.tag == "BlueAddon")
         {
-            AddonTimer.SetActive(true);
-            AddonColorText.text = "Blue";
-            startTimer = true;
-
-            GameObject addon = SpawnAddon();
-            addon.GetComponent<Renderer>().material.color = BlueAddonLiquid.color;
-            addon.GetComponent<AddonBehavior>().addon = new BlueAddon();
+            BlueAddon();
         }
 
         if (gameObject.tag == "PurpleAddon")
         {
-            AddonTimer.SetActive(true);
-            AddonColorText.text = "Purple";
-            startTimer = true;
-
-            GameObject addon = SpawnAddon();
-            addon.GetComponent<Renderer>().material.color = PurpleAddonLiquid.color;
-            addon.GetComponent<AddonBehavior>().addon = new PurpleAddon();
+            PurpleAddon();
         }
+    }
+
+    void TealAddon()
+    {
+        AddonTimer.SetActive(true);
+        AddonColorText.text = "Teal";
+        startTimer = true;
+        RemoveAddons(true);
+        elapsedTime = 0.0f;
+
+        GameObject addon = SpawnAddon();
+
+        //set the color of the addon liquid
+        addon.GetComponent<Renderer>().material.color = TealAddonLiquid.color;
+        addon.GetComponent<AddonBehavior>().addon = new TealAddon();
+    }
+
+    void YellowAddon()
+    {
+        AddonTimer.SetActive(true);
+        AddonColorText.text = "Yellow";
+        startTimer = true;
+
+        GameObject addon = SpawnAddon();
+        //set the color of the addon liquid
+        // addon.GetComponent<Renderer>().material.color = YellowAddonLiquid.color;
+        addon.GetComponent<Renderer>().material.color = YellowAddonLiquid.color;
+        addon.GetComponent<AddonBehavior>().addon = new YellowAddon();
+    }
+
+    void GreenAddon()
+    {
+        AddonTimer.SetActive(true);
+        AddonColorText.text = "Green";
+        startTimer = true;
+        RemoveAddons(true);
+        elapsedTime = 0.0f;
+
+        GameObject addon = SpawnAddon();
+        addon.GetComponent<Renderer>().material.color = GreenAddonLiquid.color;
+        addon.GetComponent<AddonBehavior>().addon = new GreenAddon();
+    }
+
+    void BlueAddon()
+    {
+        AddonTimer.SetActive(true);
+        AddonColorText.text = "Blue";
+        startTimer = true;
+        RemoveAddons(true);
+        elapsedTime = 0.0f;
+
+        GameObject addon = SpawnAddon();
+        addon.GetComponent<Renderer>().material.color = BlueAddonLiquid.color;
+        addon.GetComponent<AddonBehavior>().addon = new BlueAddon();
+    }
+
+    void PurpleAddon()
+    {
+        AddonTimer.SetActive(true);
+        AddonColorText.text = "Purple";
+        startTimer = true;
+        RemoveAddons(true);
+        elapsedTime = 0.0f;
+
+        GameObject addon = SpawnAddon();
+        addon.GetComponent<Renderer>().material.color = PurpleAddonLiquid.color;
+        addon.GetComponent<AddonBehavior>().addon = new PurpleAddon();
     }
 }
