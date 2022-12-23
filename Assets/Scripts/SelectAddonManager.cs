@@ -259,6 +259,8 @@ public class SelectAddonManager : MonoBehaviour
         AddonTimer.SetActive(true);
         AddonColorText.text = "Yellow";
         startTimer = true;
+        startTimer = true;
+        RemoveAddons(true);
 
         GameObject addon = SpawnAddon();
         //set the color of the addon liquid
