@@ -12,6 +12,11 @@ using UnityEngine;
 
 public class SelectAddonManager : MonoBehaviour
 {
+    public GameObject PurpleAddonDescritpion;
+    public GameObject BlueAddonDescritpion;
+    public GameObject GreenAddonDescritpion;
+    public GameObject YellowAddonDescritpion;
+    public GameObject TealAddonDescritpion;
 
     public GameObject Addon;
 
@@ -24,12 +29,18 @@ public class SelectAddonManager : MonoBehaviour
     public Material PurpleAddonLiquid;
     private float LastAddonSpawnTime = 0;
 
+    private Vector3 displayPos;
+
     public float AddonDuration = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+     PurpleAddonDescritpion.SetActive(false);
+     BlueAddonDescritpion.SetActive(false);
+     GreenAddonDescritpion.SetActive(false);
+     YellowAddonDescritpion.SetActive(false);
+     TealAddonDescritpion.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,19 +52,86 @@ public class SelectAddonManager : MonoBehaviour
         }
     }
 
-    public Color hoverColor;
+    private Color hoverColor;
     public Material Hover;
 
     void OnMouseEnter()
     {
         hoverColor = GetComponent<Renderer>().material.color;
         GetComponent<Renderer>().material.SetColor("_Color", Hover.color);
+
+        displayPos = Input.mousePosition;
+        if (gameObject.tag == "PurpleAddon")
+        {
+            displayPos.x += 120;
+            displayPos.y += 20;
+            PurpleAddonDescritpion.SetActive(true);
+            PurpleAddonDescritpion.transform.position = displayPos;
+            
+        }
+
+        if (gameObject.tag == "BlueAddon")
+        {
+            displayPos.x += 125;
+            displayPos.y += 20;
+            BlueAddonDescritpion.SetActive(true);
+            BlueAddonDescritpion.transform.position = displayPos;
+        }
+
+        if (gameObject.tag == "GreenAddon")
+        {
+            displayPos.x += 120;
+            displayPos.y += 20;
+            GreenAddonDescritpion.SetActive(true);
+            GreenAddonDescritpion.transform.position = displayPos;
+        }
+
+        if (gameObject.tag == "YellowAddon")
+        {
+            displayPos.x += 120;
+            displayPos.y += 20;
+            YellowAddonDescritpion.SetActive(true);
+            YellowAddonDescritpion.transform.position = displayPos;
+        }
+
+        if (gameObject.tag == "TealAddon")
+        {
+            displayPos.x += 125;
+            displayPos.y += 20;
+            TealAddonDescritpion.SetActive(true);
+            TealAddonDescritpion.transform.position = displayPos;
+        }
+
     }
 
     void OnMouseExit()
     {
         GetComponent<Renderer>().material.SetColor("_Color", hoverColor);
-        
+
+        if (gameObject.tag == "PurpleAddon")
+        {
+            PurpleAddonDescritpion.SetActive(false);
+        }
+
+        if (gameObject.tag == "BlueAddon")
+        {
+            BlueAddonDescritpion.SetActive(false);
+        }
+
+        if (gameObject.tag == "GreenAddon")
+        {
+            GreenAddonDescritpion.SetActive(false);
+        }
+
+        if (gameObject.tag == "YellowAddon")
+        {
+            YellowAddonDescritpion.SetActive(false);
+        }
+
+        if (gameObject.tag == "TealAddon")
+        {
+            TealAddonDescritpion.SetActive(false);
+        }
     }
 
     GameObject SpawnAddon()
@@ -94,7 +172,7 @@ public class SelectAddonManager : MonoBehaviour
 
         if(gameObject.tag == "TealAddon")
         {
-            Debug.Log(gameObject.tag);
+            
 
             GameObject addon = SpawnAddon();
 
@@ -104,7 +182,7 @@ public class SelectAddonManager : MonoBehaviour
 
         if (gameObject.tag == "YellowAddon")
         {
-            Debug.Log(gameObject.tag);
+            
 
             GameObject addon = SpawnAddon();
             //set the color of the addon liquid
@@ -114,7 +192,7 @@ public class SelectAddonManager : MonoBehaviour
 
         if (gameObject.tag == "GreenAddon")
         {
-            Debug.Log(gameObject.tag);
+            
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = GreenAddonLiquid.color;
@@ -122,7 +200,7 @@ public class SelectAddonManager : MonoBehaviour
 
         if (gameObject.tag == "BlueAddon")
         {
-            Debug.Log(gameObject.tag);
+            
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = BlueAddonLiquid.color;
@@ -130,7 +208,7 @@ public class SelectAddonManager : MonoBehaviour
 
         if (gameObject.tag == "PurpleAddon")
         {
-            Debug.Log(gameObject.tag);
+            
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = PurpleAddonLiquid.color;
