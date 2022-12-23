@@ -1259,12 +1259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  hoverColor: {r: 0, g: 0, b: 0, a: 0}
   PurpleAddonDescritpion: {fileID: 1735469071}
   BlueAddonDescritpion: {fileID: 921466287}
   GreenAddonDescritpion: {fileID: 175351015}
   YellowAddonDescritpion: {fileID: 1800853845}
   TealAddonDescritpion: {fileID: 873289692}
-  Addon: {fileID: 367125163}
   TealAddonLiquid: {fileID: 2100000, guid: 603ebeb575822cc4cb515da4842f434b, type: 2}
   YellowAddonLiquid: {fileID: 2100000, guid: 375f6ac3bcf7f6844a77aee8dead274a, type: 2}
   GreenAddonLiquid: {fileID: 2100000, guid: d7b80b1f1d96faa488bbb16ad5d9f360, type: 2}
@@ -2876,6 +2877,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 0}
+  YellowAddonLiquid: {fileID: 2100000, guid: 375f6ac3bcf7f6844a77aee8dead274a, type: 2}
+  GreenAddonLiquid: {fileID: 0}
+  BlueAddonLiquid: {fileID: 0}
+  PurpleAddonLiquid: {fileID: 0}
+  AddonDuration: 10
+  hoverColor: {r: 0, g: 0, b: 0, a: 0}
   PurpleAddonDescritpion: {fileID: 1735469071}
   BlueAddonDescritpion: {fileID: 921466287}
   GreenAddonDescritpion: {fileID: 175351015}
@@ -3414,6 +3423,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 2100000, guid: 603ebeb575822cc4cb515da4842f434b, type: 2}
+  YellowAddonLiquid: {fileID: 2100000, guid: 375f6ac3bcf7f6844a77aee8dead274a, type: 2}
+  GreenAddonLiquid: {fileID: 0}
+  BlueAddonLiquid: {fileID: 0}
+  PurpleAddonLiquid: {fileID: 0}
+  AddonDuration: 10
+  hoverColor: {r: 0, g: 0, b: 0, a: 0}
   PurpleAddonDescritpion: {fileID: 1735469071}
   BlueAddonDescritpion: {fileID: 921466287}
   GreenAddonDescritpion: {fileID: 175351015}
@@ -3458,6 +3475,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 0}
+  YellowAddonLiquid: {fileID: 0}
+  GreenAddonLiquid: {fileID: 0}
+  BlueAddonLiquid: {fileID: 0}
+  PurpleAddonLiquid: {fileID: 2100000, guid: 17b6ccccb0ab94f4a879b1462516800c, type: 2}
+  AddonDuration: 10
+  hoverColor: {r: 0, g: 0, b: 0, a: 0}
   PurpleAddonDescritpion: {fileID: 1735469071}
   BlueAddonDescritpion: {fileID: 921466287}
   GreenAddonDescritpion: {fileID: 175351015}
@@ -4220,6 +4245,9 @@ MonoBehaviour:
   food: {fileID: 8867308635143353987, guid: 9b0def3bc3b25494ba5099fc271116fe, type: 3}
   bacterioPhage: {fileID: 2232768577284366752, guid: 4bd30ce1cfda72d48994145bfde695d2, type: 3}
   UI: {fileID: 1010376724}
+  spawnAreaMask:
+    serializedVersion: 2
+    m_Bits: 8
   spawnAreaMask:
     serializedVersion: 2
     m_Bits: 0
@@ -6910,6 +6938,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 0}
+  YellowAddonLiquid: {fileID: 0}
+  GreenAddonLiquid: {fileID: 0}
+  BlueAddonLiquid: {fileID: 2100000, guid: 97a4aabee23148e4987a7ef217fa1666, type: 2}
+  PurpleAddonLiquid: {fileID: 0}
+  AddonDuration: 10
+  hoverColor: {r: 0, g: 0, b: 0, a: 0}
   PurpleAddonDescritpion: {fileID: 1735469071}
   BlueAddonDescritpion: {fileID: 921466287}
   GreenAddonDescritpion: {fileID: 175351015}
@@ -7409,6 +7445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Petri_dish
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 193589b935928c44bac569f51f564f73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193589b935928c44bac569f51f564f73, type: 3}
 --- !u!1 &1800853845
@@ -7771,7 +7811,7 @@ GameObject:
   - component: {fileID: 1815945684}
   - component: {fileID: 1815945683}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

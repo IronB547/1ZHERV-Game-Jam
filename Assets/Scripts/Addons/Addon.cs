@@ -8,4 +8,6 @@ public class Addon {
     public float startingTime;
 
     public float duration;
+
+    public string[] tags;
 }

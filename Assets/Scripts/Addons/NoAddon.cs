@@ -5,5 +5,6 @@ public class NoAddon : Addon {
         rangeMultiplier = 1;
         startingTime = 0;
         duration = 0;
+        tags = new string[] { };
     }
 }
