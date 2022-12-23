@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject UI;
     public GameObject HelpTab;
     public GameObject AboutTab;
+    public GameObject ExitGame;
 
     public TextMeshProUGUI FoodNumber;
     public TextMeshProUGUI CellNumber;
@@ -37,6 +38,7 @@ public class UIManager : MonoBehaviour
     private bool paused = false;
     private bool hideUI = false;
     private bool showAbout = false;
+    private bool exitGame = false;
 
     void Start()
     {
@@ -50,6 +52,7 @@ public class UIManager : MonoBehaviour
         SpawnMenu.SetActive(false);
         HelpTab.SetActive(false);
         AboutTab.SetActive(false);
+        ExitGame.SetActive(false);
 
         FoodSlider.onValueChanged.AddListener((value) => { FoodNumber.text = value.ToString("0"); });
 
@@ -94,6 +97,11 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             ShowHelpTab();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ShowExitGameButton();
         }
 
         FoodStatsNumber.text = GameObject.FindGameObjectsWithTag("Food").Length.ToString();
@@ -233,4 +241,24 @@ public class UIManager : MonoBehaviour
             showAbout = true;
         }
     }
+
+    public void ShowExitGameButton()
+    {
+        if (exitGame)
+        {
+            ExitGame.SetActive(false);
+            exitGame = false;
+        }
+        else
+        {
+            ExitGame.SetActive(true);
+            exitGame = true;
+        }
+    }
+
+    public void ExitGameAction()
+    {
+        Application.Quit();
+    }
+
 }
