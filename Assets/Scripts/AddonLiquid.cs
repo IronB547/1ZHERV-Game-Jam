@@ -31,13 +31,14 @@ public class AddonLiquid : MonoBehaviour
 
         foreach (Collider check in checks)
         {
-            if (check.gameObject.GetComponent<Addon>() != null)
+            if (check.gameObject.GetComponent<EntityAddon>() != null)
             {
-                check.gameObject.GetComponent<Addon>().speedMultiplier = 1.5f;
-                check.gameObject.GetComponent<Addon>().replicationRateMultiplier = 1.5f;
-                check.gameObject.GetComponent<Addon>().rangeMultiplier = 1.5f;
-                check.gameObject.GetComponent<Addon>().startingTime = 0;
-                check.gameObject.GetComponent<Addon>().duration = 10;
+                // check.gameObject.GetComponent<EntityAddon>().speedMultiplier = 1.5f;
+                // check.gameObject.GetComponent<EntityAddon>().replicationRateMultiplier = 1.5f;
+                // check.gameObject.GetComponent<EntityAddon>().rangeMultiplier = 1.5f;
+                // check.gameObject.GetComponent<EntityAddon>().startingTime = 0;
+                // check.gameObject.GetComponent<EntityAddon>().duration = 10;
+
             }
         }        
     }

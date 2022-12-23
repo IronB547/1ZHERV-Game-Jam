@@ -12,11 +12,12 @@ TagManager:
   - TealAddon
   - BlueAddon
   - PurpleAddon
+  - Addon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - SpawnArea
   - Water
   - UI
   - Food

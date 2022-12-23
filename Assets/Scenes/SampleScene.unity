@@ -1182,6 +1182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 0}
+  YellowAddonLiquid: {fileID: 0}
+  GreenAddonLiquid: {fileID: 2100000, guid: d7b80b1f1d96faa488bbb16ad5d9f360, type: 2}
+  BlueAddonLiquid: {fileID: 0}
+  PurpleAddonLiquid: {fileID: 0}
+  AddonDuration: 10
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   Hover: {fileID: 2100000, guid: d7b80b1f1d96faa488bbb16ad5d9f360, type: 2}
 --- !u!64 &191883593
@@ -2004,104 +2011,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324918290}
   m_CullTransparentMesh: 1
---- !u!1 &367125163
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 367125168}
-  - component: {fileID: 367125167}
-  - component: {fileID: 367125166}
-  - component: {fileID: 367125165}
-  m_Layer: 0
-  m_Name: Cylinder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &367125165
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367125163}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!23 &367125166
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367125163}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 603ebeb575822cc4cb515da4842f434b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &367125167
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367125163}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &367125168
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367125163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 40.5, z: -10.6}
-  m_LocalScale: {x: 51, y: 0.020593, z: 51}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &393140166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +2656,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 0}
+  YellowAddonLiquid: {fileID: 2100000, guid: 375f6ac3bcf7f6844a77aee8dead274a, type: 2}
+  GreenAddonLiquid: {fileID: 0}
+  BlueAddonLiquid: {fileID: 0}
+  PurpleAddonLiquid: {fileID: 0}
+  AddonDuration: 10
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   Hover: {fileID: 2100000, guid: 375f6ac3bcf7f6844a77aee8dead274a, type: 2}
 --- !u!64 &550785618
@@ -3274,6 +3190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 2100000, guid: 603ebeb575822cc4cb515da4842f434b, type: 2}
+  YellowAddonLiquid: {fileID: 2100000, guid: 375f6ac3bcf7f6844a77aee8dead274a, type: 2}
+  GreenAddonLiquid: {fileID: 0}
+  BlueAddonLiquid: {fileID: 0}
+  PurpleAddonLiquid: {fileID: 0}
+  AddonDuration: 10
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   Hover: {fileID: 2100000, guid: 603ebeb575822cc4cb515da4842f434b, type: 2}
 --- !u!64 &669875527
@@ -3307,6 +3230,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 0}
+  YellowAddonLiquid: {fileID: 0}
+  GreenAddonLiquid: {fileID: 0}
+  BlueAddonLiquid: {fileID: 0}
+  PurpleAddonLiquid: {fileID: 2100000, guid: 17b6ccccb0ab94f4a879b1462516800c, type: 2}
+  AddonDuration: 10
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   Hover: {fileID: 2100000, guid: 17b6ccccb0ab94f4a879b1462516800c, type: 2}
 --- !u!64 &695627987
@@ -3904,6 +3834,9 @@ MonoBehaviour:
   food: {fileID: 8867308635143353987, guid: 9b0def3bc3b25494ba5099fc271116fe, type: 3}
   bacterioPhage: {fileID: 2232768577284366752, guid: 4bd30ce1cfda72d48994145bfde695d2, type: 3}
   UI: {fileID: 1010376724}
+  spawnAreaMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &973541785
 GameObject:
   m_ObjectHideFlags: 0
@@ -6186,6 +6119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7665fdd272be0284e9ae8e4bd6071e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Addon: {fileID: 1261698372386605175, guid: 4adbf733a109f8a428ab612a5428fe50, type: 3}
+  TealAddonLiquid: {fileID: 0}
+  YellowAddonLiquid: {fileID: 0}
+  GreenAddonLiquid: {fileID: 0}
+  BlueAddonLiquid: {fileID: 2100000, guid: 97a4aabee23148e4987a7ef217fa1666, type: 2}
+  PurpleAddonLiquid: {fileID: 0}
+  AddonDuration: 10
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   Hover: {fileID: 2100000, guid: 2ec7621f9aadca24ab1ceeddbf7a7804, type: 2}
 --- !u!64 &1616276197
@@ -6597,6 +6537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Petri_dish
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 193589b935928c44bac569f51f564f73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193589b935928c44bac569f51f564f73, type: 3}
 --- !u!1 &1815945682
@@ -6612,7 +6556,7 @@ GameObject:
   - component: {fileID: 1815945684}
   - component: {fileID: 1815945683}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -25,7 +25,20 @@ public class FoodConsume : MonoBehaviour
             cellInstance.transform.position = transform.position;
             cellInstance.transform.localScale = initialScale;
             cellInstance.GetComponent<FieldOfView>().enabled = true;
+            cellInstance.GetComponent<EntityAddon>().enabled = true;
+
+            if(GetComponent<EntityAddon>().addon != null)
+                cellInstance.GetComponent<EntityAddon>().addon = GetComponent<EntityAddon>().addon;
         }
+    }
+
+    private float getReplicationMultiplier(){
+        if(GetComponent<EntityAddon>().addon == null)
+            return 1.0f;
+
+        Debug.Log("Replication multiplier: " + GetComponent<EntityAddon>().addon.replicationRateMultiplier);
+
+        return GetComponent<EntityAddon>().addon.replicationRateMultiplier;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -52,7 +65,7 @@ public class FoodConsume : MonoBehaviour
 
                 foodEaten = 0;
 
-                spawnCells(3);
+                spawnCells(3 * (int) getReplicationMultiplier());
             }
         }
     }

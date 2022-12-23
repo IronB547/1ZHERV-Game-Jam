@@ -20,6 +20,25 @@ public class FieldOfView : MonoBehaviour
 
     public Vector3 directionToTarget;
 
+    private float getRadius(){
+        //get the multiplier
+        if(GetComponent<EntityAddon>().addon == null)
+            return radius;
+
+        float multiplier = GetComponent<EntityAddon>().addon.rangeMultiplier;
+        // Debug.Log("Radius multiplier: " + multiplier);
+        return radius * multiplier;
+    }
+
+    private float getSpeedMultiplier(){
+        //get the multiplier
+        if(GetComponent<EntityAddon>().addon == null)
+            return 1.0f;
+
+        float multiplier = GetComponent<EntityAddon>().addon.speedMultiplier;
+        return multiplier;
+    } 
+
     private void Start()
     {
         StartCoroutine(FOVRoutine());
@@ -38,19 +57,19 @@ public class FieldOfView : MonoBehaviour
 
     private void FieldOfViewCheck()
     {
-        Collider[] phageChecks = Physics.OverlapSphere(transform.position, radius * 0.4f, phageMask);
+        Collider[] phageChecks = Physics.OverlapSphere(transform.position, getRadius() * 0.4f, phageMask);
         if(phageChecks.Length != 0){
             Transform target = phageChecks[0].transform;
             
             //escape from the phage
             directionToTarget = (transform.position - target.position).normalized;
 
-            GetComponent<Rigidbody>().AddForce(directionToTarget * 10);
+            GetComponent<Rigidbody>().AddForce(directionToTarget * 10 * getSpeedMultiplier());
 
             return;
         }
 
-        Collider[] foodChecks = Physics.OverlapSphere(transform.position, radius, foodMask);
+        Collider[] foodChecks = Physics.OverlapSphere(transform.position, getRadius(), foodMask);
 
         if (foodChecks.Length != 0)
         {
@@ -60,7 +79,7 @@ public class FieldOfView : MonoBehaviour
 
             canSeeFood = true;
 
-            GetComponent<Rigidbody>().AddForce(directionToTarget * 10);
+            GetComponent<Rigidbody>().AddForce(directionToTarget * 10 * getSpeedMultiplier());
 
         }
         else if (canSeeFood)

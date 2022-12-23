@@ -80,12 +80,6 @@ public class SelectAddonManager : MonoBehaviour
                 Destroy(addon);
             }
         }
-        // //remove any addons that are already in the petri dish
-        // GameObject[] addons = GameObject.FindGameObjectsWithTag("Addon");
-        // foreach (GameObject addon in addons)
-        // {
-        //     Destroy(addon);
-        // }
     }
 
     void OnMouseDown()
@@ -100,6 +94,7 @@ public class SelectAddonManager : MonoBehaviour
 
             //set the color of the addon liquid
             addon.GetComponent<Renderer>().material.color = TealAddonLiquid.color;
+            addon.GetComponent<AddonBehavior>().addon = new TealAddon();
         }
 
         if (gameObject.tag == "YellowAddon")
@@ -110,6 +105,7 @@ public class SelectAddonManager : MonoBehaviour
             //set the color of the addon liquid
             // addon.GetComponent<Renderer>().material.color = YellowAddonLiquid.color;
             addon.GetComponent<Renderer>().material.color = YellowAddonLiquid.color;
+            addon.GetComponent<AddonBehavior>().addon = new YellowAddon();
         }
 
         if (gameObject.tag == "GreenAddon")
@@ -118,6 +114,7 @@ public class SelectAddonManager : MonoBehaviour
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = GreenAddonLiquid.color;
+            addon.GetComponent<AddonBehavior>().addon = new GreenAddon();
         }
 
         if (gameObject.tag == "BlueAddon")
@@ -126,6 +123,7 @@ public class SelectAddonManager : MonoBehaviour
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = BlueAddonLiquid.color;
+            addon.GetComponent<AddonBehavior>().addon = new BlueAddon();
         }
 
         if (gameObject.tag == "PurpleAddon")
@@ -134,6 +132,7 @@ public class SelectAddonManager : MonoBehaviour
 
             GameObject addon = SpawnAddon();
             addon.GetComponent<Renderer>().material.color = PurpleAddonLiquid.color;
+            addon.GetComponent<AddonBehavior>().addon = new PurpleAddon();
         }
     }
 }

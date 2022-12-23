@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1261698372386605175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 40.5, z: -10.6}
-  m_LocalScale: {x: 51, y: 0.020593, z: 51}
+  m_LocalScale: {x: 53, y: 0.020593, z: 53}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1261698372386605175}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -112,4 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 0
+  addonMask:
+    serializedVersion: 2
+    m_Bits: 129
   duration: 10

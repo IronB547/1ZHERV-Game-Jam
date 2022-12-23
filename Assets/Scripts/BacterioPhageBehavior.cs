@@ -10,6 +10,15 @@ public class BacterioPhageBehavior : MonoBehaviour
     //get the time at which the object was created
     private float startTime;
 
+    private float getSpeedMultiplier(){
+        //get the multiplier
+        if(GetComponent<EntityAddon>().addon == null)
+            return 1.0f;
+
+        float multiplier = GetComponent<EntityAddon>().addon.speedMultiplier;
+        return multiplier;
+    }
+
     private void Start()
     {
         // playerRef = GameObject.FindGameObjectWithTag("Player");
@@ -44,7 +53,7 @@ public class BacterioPhageBehavior : MonoBehaviour
             if(Random.Range(0, 2) == 0)
                 z *= -1;
 
-            GetComponent<Rigidbody>().AddForce(new Vector3(x, 0, z) * 10);
+            GetComponent<Rigidbody>().AddForce(new Vector3(x, 0, z) * 10 * getSpeedMultiplier());
         }
     }
 
